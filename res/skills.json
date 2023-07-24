@@ -1,0 +1,436 @@
+[
+    {
+        "Name": "Industrial Mechanics",
+        "Number": "01",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "Industrial mechanics design and plan, install and commission, maintain, repair, and decommission, industrial plant. They work in a large range of industrial settings and production plants and may either have specialist knowledge about one particular industry or work across several. They may be employed within a large single plant, installing and maintaining production equipment, or work for subcontractors across a number of industrial settings. They normally work both indoors and outdoors, on small and large projects.",
+        "Image": "https://images.worldskillsusercontent.org/ws7d/wsb3/32883/ws7db3f25c-7b5d-4f52-ba82-9aae4183f497_medium"
+    },
+    {
+        "Name": "Information Network Cabling",
+        "Number": "02",
+        "Type": "Information and Communication Technology",
+        "Description": "Essential business services from cable TV to telephones and broadband all depend on Information Network Cabling.",
+        "Image": "https://images.worldskillsusercontent.org/ws28/ws4b/22254/ws284b19db-c28f-4f8e-84c0-2ea5e34a95a9_medium"
+    },
+    {
+        "Name": "Manufacturing Team Challenge",
+        "Number": "03",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "While individual skills are important, being able to work with others as part of a team is the key to the success of any project.",
+        "Image": "https://images.worldskillsusercontent.org/wse7/ws51/22257/wse7517670-f42c-4a63-88f5-258169f490af_medium"
+    },
+    {
+        "Name": "Mechatronics",
+        "Number": "04",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "Mechatronics includes mechanics, pneumatics, electronically controlled systems, programming, and robotics and systems development.",
+        "Image": "https://images.worldskillsusercontent.org/ws73/ws47/22259/ws7347bac4-92a1-4692-b74e-c4f46e74f414_medium"
+    },
+    {
+        "Name": "Mechanical Engineering CAD",
+        "Number": "05",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "Computer aided design (CAD) uses specialist software to create two and three dimensional images and animations of projects both in manufacturing and for use in advertising and technical manuals.",
+        "Image": "https://images.worldskillsusercontent.org/ws4a/wsc2/22258/ws4ac26b12-67cc-4cc4-b3f0-b56b5c7be7b1_medium"
+    },
+    {
+        "Name": "CNC Turning",
+        "Number": "06",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "When engineers want to know if a specific part of a design is going to work, they look to CNC Turning. The finished article is used to create pieces of machinery that are often highly-complex. A typical car has around 10,000 parts alone.",
+        "Image": "https://images.worldskillsusercontent.org/wsbb/wsdf/22250/wsbbdfacbe-e862-43a6-a167-d59239e94436_medium"
+    },
+    {
+        "Name": "CNC Milling",
+        "Number": "07",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "Many of the appliances and objects we use every day depend on Computer Numeric Control (CNC) Milling. It is a highly sophisticated piece of machinery that creates components using precise cutting tools.",
+        "Image": "https://images.worldskillsusercontent.org/wsfd/ws75/22247/wsfd75b622-b67f-42c5-97ef-2e60eed2ff79_medium"
+    },
+    {
+        "Name": "Mobile Applications Development",
+        "Number": "08",
+        "Type": "Information and Communication Technology",
+        "Description": "We use apps on our phones every day. It is the job of Mobile Applications Development to create these essential tools for almost every aspect of our lives.",
+        "Image": "https://images.worldskillsusercontent.org/wscd/ws12/31397/wscd12ee3f-ebc9-4081-9cdb-43e003a876ed_medium"
+    },
+    {
+        "Name": "IT Software Solutions for Business",
+        "Number": "09",
+        "Type": "Information and Communication Technology",
+        "Description": "One of the areas of greatest demand in today\u2019s business world is providing software solutions.",
+        "Image": "https://images.worldskillsusercontent.org/wsd0/wsef/22255/wsd0ef5683-83dc-4920-87b4-4f07e6cbecee_medium"
+    },
+    {
+        "Name": "Welding",
+        "Number": "10",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "Welders work with different metals to cut and join everything from steel beams to pipes, plates, and pressurized vessels.",
+        "Image": "https://images.worldskillsusercontent.org/ws87/ws6e/22267/ws876ef4b0-275b-48e3-aea5-f5abcf4858f7_medium"
+    },
+    {
+        "Name": "Print Media Technology",
+        "Number": "11",
+        "Type": "Information and Communication Technology",
+        "Description": "The print media technology professional is responsible for all aspects in the production of printed materials, most often using traditional ink on paper, but also newer digital technologies like toner on paper.",
+        "Image": "https://images.worldskillsusercontent.org/ws20/wsae/22265/ws20ae45a8-a914-40ac-a6aa-d91d8d636400_medium"
+    },
+    {
+        "Name": "Wall and Floor Tiling",
+        "Number": "12",
+        "Type": "Construction and Building Technology",
+        "Description": "Tiles can be made of ceramics, mosaic, and natural stone. Likewise the environment in which they are used is equally diverse: walls, floors, and staircases in houses, offices, gardens, factories, public buildings, and places of worship.",
+        "Image": "https://images.worldskillsusercontent.org/ws14/wse8/22299/ws14e808df-905c-4bfe-a633-7d61eb5aee58_medium"
+    },
+    {
+        "Name": "Autobody Repair",
+        "Number": "13",
+        "Type": "Transportation and Logistics",
+        "Description": "When a vehicle has been involved in a collision, it is the job of the autobody repairer to restore it to factory standards and get it back on the road. Every accident is different, so the repairer must be familiar with often-complex mechanical components and how they work.",
+        "Image": "https://images.worldskillsusercontent.org/ws92/ws7c/22244/ws927c5d41-eb1b-4c04-87d0-c3fdc738a792_medium"
+    },
+    {
+        "Name": "Aircraft Maintenance",
+        "Number": "14",
+        "Type": "Transportation and Logistics",
+        "Description": "A high level of expertise is needed to make sure that aircraft are serviced to rigorous quality and safety standards. An aircraft maintenance technician may specialize in vehicles like helicopters, UAVs (Unmanned Aeronautical Vehicles), or tilt wing aircraft.",
+        "Image": "https://images.worldskillsusercontent.org/wsad/ws72/22239/wsad72c0df-7719-409b-8ca0-1d7d75875e61_medium"
+    },
+    {
+        "Name": "Plumbing and Heating",
+        "Number": "15",
+        "Type": "Construction and Building Technology",
+        "Description": "We all depend on plumbing and heating technicians for hot and cold fresh running water in our homes and offices and for staying warm in cold weather.",
+        "Image": "https://images.worldskillsusercontent.org/ws11/ws6b/26660/ws116ba3b9-21cf-4467-867a-4c41fa936d53_medium"
+    },
+    {
+        "Name": "Electronics",
+        "Number": "16",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "Variety is the key to a successful career in electronics. Technicians and engineers are needed to operate specialist equipment in workplaces that will range from aerospace and the armed forces to the entertainment industry, robotics, education, health, and telecommunications.",
+        "Image": "https://images.worldskillsusercontent.org/ws94/ws6c/22252/ws946c8500-dbf6-431a-b0d5-689dbc4b8f5e_medium"
+    },
+    {
+        "Name": "Web Technologies",
+        "Number": "17",
+        "Type": "Information and Communication Technology",
+        "Description": "Working with web technologies is a key skill in a world that increasingly places the web\u00a0at the heart of a modern platform. It\u00a0is also one of the most complex and diverse of all skills.",
+        "Image": "https://images.worldskillsusercontent.org/ws72/wsdb/22266/ws72dbd2f9-281e-41cf-9349-77bee08d63cd_medium"
+    },
+    {
+        "Name": "Electrical Installations",
+        "Number": "18",
+        "Type": "Construction and Building Technology",
+        "Description": "Electricians are needed wherever there is electricity. They can expect to work in homes, offices, factories, and even farms, carrying out maintenance and repairs, and sometimes designing and installing new systems.",
+        "Image": "https://images.worldskillsusercontent.org/wsdd/wsdf/22251/wsdddfcfce-c92b-4e69-9fab-d7f8a1648c41_medium"
+    },
+    {
+        "Name": "Industrial Control",
+        "Number": "19",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "Automation is of increasing importance in the industrial control of production systems. It requires the ability to troubleshoot, both during installation and in working systems, either across industries or in a specialist area.",
+        "Image": "https://images.worldskillsusercontent.org/ws2a/ws62/22253/ws2a6208f2-620a-4768-a731-e66bebe13ecd_medium"
+    },
+    {
+        "Name": "Bricklaying",
+        "Number": "20",
+        "Type": "Construction and Building Technology",
+        "Description": "Bricklaying is a skill that can be said to be the building block of much of our world. The bricklayer works on everything from our homes to commercial buildings and the walls that surround them.",
+        "Image": "https://images.worldskillsusercontent.org/ws51/wsbc/22245/ws51bc3aba-b402-4c8b-b17a-26d84d661ee9_medium"
+    },
+    {
+        "Name": "Plastering and Drywall Systems",
+        "Number": "21",
+        "Type": "Construction and Building Technology",
+        "Description": "Plasterers work on both inside and outside surfaces, often creating metal frames and installing plasterboard to create drywalls before applying the final plaster surface.",
+        "Image": "https://images.worldskillsusercontent.org/wsea/ws77/22262/wsea77f445-916e-4476-bfae-377cf0ce253f_medium"
+    },
+    {
+        "Name": "Painting and Decorating",
+        "Number": "22",
+        "Type": "Construction and Building Technology",
+        "Description": "The services of the painter and decorator are needed everywhere from homes to public buildings, factories, and offices.",
+        "Image": "https://images.worldskillsusercontent.org/ws3f/ws58/22261/ws3f58690c-abd9-4b3a-846c-e406cd5561b3_medium"
+    },
+    {
+        "Name": "Mobile Robotics",
+        "Number": "23",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "Robots play an increasing role in our lives and places of work in areas as diverse as manufacturing, agriculture, aerospace, mining, and medicine.",
+        "Image": "https://images.worldskillsusercontent.org/ws56/wsc6/47868/ws56c69b5a-ac86-47b3-895e-d9ea5d8fc6d2_medium"
+    },
+    {
+        "Name": "Cabinetmaking",
+        "Number": "24",
+        "Type": "Construction and Building Technology",
+        "Description": "Craftsmanship is at the heart of cabinetmaking. In an age of mass production the cabinetmaker produces lasting work designed to be appreciated for many generations. Cabinetmakers must combine creativity and innovation with precision and accuracy and demonstrate a high appreciation of how to use the beauty of wood to best effect.",
+        "Image": "https://images.worldskillsusercontent.org/ws95/wsd7/32875/ws95d764cb-030c-4607-b736-9f10aa5fdd9d_medium"
+    },
+    {
+        "Name": "Joinery",
+        "Number": "25",
+        "Type": "Construction and Building Technology",
+        "Description": "Working from drawings, the joiner\u2019s task is to measure and cut joints then assemble, install, and finish to a high standard.",
+        "Image": "https://images.worldskillsusercontent.org/ws0c/ws8b/22256/ws0c8b482d-f2e3-4271-9197-b8ae9a9f67b4_medium"
+    },
+    {
+        "Name": "Carpentry",
+        "Number": "26",
+        "Type": "Construction and Building Technology",
+        "Description": "Carpentry is a precision skill which requires accuracy in measuring and cutting so that everything fits into the construction project smoothly and no wood is wasted. Using power and hand tools, a carpenter utilizes ancient and modern techniques to work with wood and to execute perfectly the process of converting raw wood into finished products.",
+        "Image": "https://images.worldskillsusercontent.org/wsd1/ws1c/22276/wsd11c334b-a89d-48a8-ac19-611f12bbd16a_medium"
+    },
+    {
+        "Name": "Jewellery",
+        "Number": "27",
+        "Type": "Creative Arts and Fashion",
+        "Description": "The jewellery worker\u2019s job is to take an intricate design, or create one themselves, and turn it into a beautiful piece of jewellery.",
+        "Image": "https://images.worldskillsusercontent.org/ws90/ws05/32885/ws90050869-705c-4f9b-886c-bf432c3e35ee_medium"
+    },
+    {
+        "Name": "Floristry",
+        "Number": "28",
+        "Type": "Creative Arts and Fashion",
+        "Description": "A successful florist understands the principles of design, aesthetics, composition, and colour to capture the mood of the customer.",
+        "Image": "https://images.worldskillsusercontent.org/ws54/wsdf/22281/ws54df2374-cdb7-4449-a6f3-6e354f4aec3f_medium"
+    },
+    {
+        "Name": "Hairdressing",
+        "Number": "29",
+        "Type": "Social and Personal Services",
+        "Description": "A visit to the hairdresser can be much more than a quick trim. It can involve styling, colouring, and using special treatments. You work closely with your clients and it\u2019s important to have good people and communication skills in addition to a full range of professional hairdressing skills.",
+        "Image": "https://images.worldskillsusercontent.org/ws81/ws82/22284/ws81820d5b-05d8-4b89-9c0c-62d53064ef97_medium"
+    },
+    {
+        "Name": "Beauty Therapy",
+        "Number": "30",
+        "Type": "Social and Personal Services",
+        "Description": "Beauty Therapy work includes a variety of skills from hair-styling, nail and skin care to body massage and make-up expertise.",
+        "Image": "https://images.worldskillsusercontent.org/ws70/ws16/22274/ws701660da-dcf1-435e-8823-a3dca74aed14_medium"
+    },
+    {
+        "Name": "Fashion Technology",
+        "Number": "31",
+        "Type": "Creative Arts and Fashion",
+        "Description": "A strong sense of fashion trends and appreciation of fabrics are two of the core skills of fashion technology.",
+        "Image": "https://images.worldskillsusercontent.org/wsbf/wse9/22280/wsbfe98e26-cac0-4ef6-9cb6-927c7573aaa5_medium"
+    },
+    {
+        "Name": "P\u00e2tisserie and Confectionery",
+        "Number": "32",
+        "Type": "Social and Personal Services",
+        "Description": "Confectionery can range from petit fours to chocolates and candies. They can be served hot or cold everywhere from hotels and restaurants to specialist stores.",
+        "Image": "https://images.worldskillsusercontent.org/wse0/wsa3/32887/wse0a30393-341a-445b-8612-b81267ebabdf_medium"
+    },
+    {
+        "Name": "Automobile Technology",
+        "Number": "33",
+        "Type": "Transportation and Logistics",
+        "Description": "Maintaining modern vehicles is a highly skilled occupation that requires a thorough understanding of how they work.",
+        "Image": "https://images.worldskillsusercontent.org/wsd1/ws7d/22272/wsd17d752a-31c1-493b-8e94-df0a441c4a64_medium"
+    },
+    {
+        "Name": "Cooking",
+        "Number": "34",
+        "Type": "Social and Personal Services",
+        "Description": "Preparing delicious meals may be the most obvious part of the work of a professional chef, but the job requires much more.",
+        "Image": "https://images.worldskillsusercontent.org/ws02/ws03/22279/ws0203a5c7-ffc2-4edd-ba2f-d8b29493433b_medium"
+    },
+    {
+        "Name": "Restaurant Service",
+        "Number": "35",
+        "Type": "Social and Personal Services",
+        "Description": "For a memorable meal the quality of the service is something that guests often remember as much as the food and drink served.",
+        "Image": "https://images.worldskillsusercontent.org/ws2d/wsd2/22295/ws2dd2fda5-d9ae-4e98-a022-dddc265904d5_medium"
+    },
+    {
+        "Name": "Car Painting",
+        "Number": "36",
+        "Type": "Transportation and Logistics",
+        "Description": "Vehicles scratched, dented, or damaged in accidents must be returned to the road in showroom condition, with the repaired areas exactly matching the rest of the exterior colour and quality. It could be said that the greatest tribute to a good car painter is when they have finished you cannot see what they have done.",
+        "Image": "https://images.worldskillsusercontent.org/ws88/ws95/22275/ws8895826e-d11d-4ba9-b132-db4d14835ade_medium"
+    },
+    {
+        "Name": "Landscape Gardening",
+        "Number": "37",
+        "Type": "Construction and Building Technology",
+        "Description": "Landscape gardeners can expect to work on everything from a city park to a country garden, but always with the aim of creating an oasis of beautiful green tranquility.",
+        "Image": "https://images.worldskillsusercontent.org/ws39/wsb7/22290/ws39b70a8d-34e2-432e-a72c-58436d748cb3_medium"
+    },
+    {
+        "Name": "Refrigeration and Air Conditioning",
+        "Number": "38",
+        "Type": "Construction and Building Technology",
+        "Description": "The refrigeration and air conditioning engineer is responsible for the design, installation, maintenance, and repair of both systems.",
+        "Image": "https://images.worldskillsusercontent.org/ws52/wsf6/22294/ws52f61e58-b8ca-48b4-86c6-9932dc7a6c93_medium"
+    },
+    {
+        "Name": "IT Network Systems Administration",
+        "Number": "39",
+        "Type": "Information and Communication Technology",
+        "Description": "For the IT Network Systems Administrator, the work environment can range from data centres to network operations centres, internet service providers and data centres like climate-controlled server rooms. The ability to communicate, problem solve, and research and understand the latest industry developments is paramount.",
+        "Image": "https://images.worldskillsusercontent.org/wsb9/ws65/22288/wsb9653609-7f55-4e3c-89f5-e77330b713d4_medium"
+    },
+    {
+        "Name": "Graphic Design Technology",
+        "Number": "40",
+        "Type": "Creative Arts and Fashion",
+        "Description": "Graphic Design Technology can employ a variety of specialists within a single team, which might include a graphic designer, graphic artist, prepress operator, typographer, typesetter, type designer, image manipulation specialist, illustrator, art director, production manager, digital printer, information designer, publisher, or packaging specialist.",
+        "Image": "https://images.worldskillsusercontent.org/ws3b/ws43/22283/ws3b4353f6-9bc7-40a3-b4ca-87735f55752f_medium"
+    },
+    {
+        "Name": "Health and Social Care",
+        "Number": "41",
+        "Type": "Social and Personal Services",
+        "Description": "A health and social care practitioner delivers health support from initial care to rehabilitation. Through building a close relationship with medical practitioners they are able to support patients and their families to ensure their holistic care needs are met.",
+        "Image": "https://images.worldskillsusercontent.org/ws51/ws8d/22285/ws518d28b8-8c89-421c-a406-5ed1492f6512_medium"
+    },
+    {
+        "Name": "Construction Metal Work",
+        "Number": "42",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "Steel structures are crucial in all areas of construction, from the buildings themselves to the tower cranes needed to assemble them. You will need to understand how the different types of steel need to be used, and how to cut, join, and weld them both in engineering workshops and on site.",
+        "Image": "https://images.worldskillsusercontent.org/ws23/ws5e/22278/ws235ef03a-4c84-4eeb-ae6f-33c8cf8d1759_medium"
+    },
+    {
+        "Name": "Visual Merchandising",
+        "Number": "44",
+        "Type": "Creative Arts and Fashion",
+        "Description": "Having good products is only part of the key to a successful retail outlet. Drawing people in by using visual appeal is also important.",
+        "Image": "https://images.worldskillsusercontent.org/ws85/ws2c/22297/ws852c552e-cba5-48a2-9f5e-449c9d05c159_medium"
+    },
+    {
+        "Name": "Prototype Modelling",
+        "Number": "45",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "Prototypes are essential if designers are to understand how a product will perform. They allow testing of function and performance in the real world, and even determine if customers want to buy them.",
+        "Image": "https://images.worldskillsusercontent.org/ws6b/ws38/22293/ws6b389691-74f9-420d-ab43-628d550fb769_medium"
+    },
+    {
+        "Name": "Concrete Construction Work",
+        "Number": "46",
+        "Type": "Construction and Building Technology",
+        "Description": "Concrete Construction workers perform a lot of physical tasks, often beyond the basic responsibility of mixing and delivering the correct amount of concrete to the builders. This includes operating hand and power tools, so learning how to use them safely is vital. Safety is also crucial in preparatory work when erecting scaffolding and carrying out the demolition of old structures.",
+        "Image": "https://images.worldskillsusercontent.org/ws2b/wsa7/22277/ws2ba71124-6862-44cd-978d-285a8a28a0bc_medium"
+    },
+    {
+        "Name": "Bakery",
+        "Number": "47",
+        "Type": "Social and Personal Services",
+        "Description": "Bakers need to demonstrate basic baking skills and an attention to detail to create perfect breads and pastries which are both good to look at, and delicious to eat.",
+        "Image": "https://images.worldskillsusercontent.org/ws8e/ws7d/22273/ws8e7d5c26-1513-4fdf-bc77-9773c837e518_medium"
+    },
+    {
+        "Name": "Industry 4.0",
+        "Number": "48",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "When we talk about Industry 4.0, we mean the impact information and communication technologies (ICT) are having on real-time optimization and networking for efficient automation and production. This is sometimes also called the \u201cfourth industrial revolution\u201d.",
+        "Image": "https://images.worldskillsusercontent.org/ws6c/ws62/31395/ws6c6210f5-034d-4148-93fb-817648a4797f_medium"
+    },
+    {
+        "Name": "Heavy Vehicle Technology",
+        "Number": "49",
+        "Type": "Transportation and Logistics",
+        "Description": "Heavy vehicle maintenance technicians must be able to work with internal combustion engines and components. This entails a knowledge of a variety of specific tools such as heavy equipment and power tools to diagnose problems, make adjustments, and repair faults.",
+        "Image": "https://images.worldskillsusercontent.org/ws1a/ws3d/22286/ws1a3d2836-74b6-4dd6-9b88-e57ede5cc19b_medium"
+    },
+    {
+        "Name": "3D Digital Game Art",
+        "Number": "50",
+        "Type": "Creative Arts and Fashion",
+        "Description": "The 3D Digital Game Artist draws, models, and animates in different styles depending on the type of game, and is responsible for every aspect, from taking a designer\u2019s brief to using\u00a0creative, technical, and specialist skills to deliver a marketable game. The challenge is to take a concept and transform it into a 3D mesh which harnesses a wide range of skill sets from good geometry decisions to symmetry and texture.",
+        "Image": "https://images.worldskillsusercontent.org/wsf1/ws03/22271/wsf1039f50-c4df-4a0a-adc2-ddabb167fb6a_medium"
+    },
+    {
+        "Name": "Freight Forwarding",
+        "Number": "51",
+        "Type": "Transportation and Logistics",
+        "Description": "A forwarder is a master logistician who uses a variety of shipping methods including ships, airplanes, trucks, and rail to ensure that delivery is made in the quickest and cheapest way possible.",
+        "Image": "https://images.worldskillsusercontent.org/wse0/wsda/32879/wse0da57bf-53a8-45f8-9685-8b07a1c2ad97_medium"
+    },
+    {
+        "Name": "Chemical Laboratory Technology",
+        "Number": "52",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "Laboratory chemical analysts study substances to determine their chemical composition for research or to develop products. Chemical analysis is necessary to ensure the properties of raw materials, the intermediate stages of the technological processes, and the finished products comply with current standards.",
+        "Image": "https://images.worldskillsusercontent.org/ws68/ws85/32877/ws688566ad-e44d-4d42-b86f-3fc24725619a_medium"
+    },
+    {
+        "Name": "Cloud Computing",
+        "Number": "53",
+        "Type": "Information and Communication Technology",
+        "Description": "Cloud computing specialists help companies migrate their physical information technology activities, such as file storage and on-site servers, into a virtual environment. Cloud engineers typically work at either tech companies or large enterprises with substantial infrastructure.",
+        "Image": "https://images.worldskillsusercontent.org/wse1/ws18/31390/wse118c81b-680f-4fc7-9381-2812c842a911_medium"
+    },
+    {
+        "Name": "Cyber Security",
+        "Number": "54",
+        "Type": "Information and Communication Technology",
+        "Description": "Information security analysts work to protect an organization\u2019s computer systems networks, to prevent hackers from accessing and/or stealing sensitive information and data. They are often employed by IT service providers, banking and financial services, government agencies and healthcare companies.",
+        "Image": "https://images.worldskillsusercontent.org/ws2a/wsa7/31606/ws2aa77286-c04c-4bce-9e95-e28c32eb45c9_medium"
+    },
+    {
+        "Name": "Water Technology",
+        "Number": "55",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "Water engineering technicians monitor and test water quality to ensure it is safe for consumption. Water is our most precious resource, which needs special protection. It needs to be extracted from wells or springs, or obtained from a lake or river before it gets treated to become drinking water. It will go through a series of treatment processes to make it clean. Treated clean water will then be stored and distributed for us to use. Water engineering technicians take care of all these tasks.",
+        "Image": "https://images.worldskillsusercontent.org/ws5e/wsd5/31402/ws5ed524cf-e96a-4e08-bfa4-d64868faa534_medium"
+    },
+    {
+        "Name": "Hotel Reception",
+        "Number": "56",
+        "Type": "Social and Personal Services",
+        "Description": "Hotel receptionists deliver a wide range of guest services: welcome guests to the hotel, make reservations for them and attend to their other needs to keep them happy during their stay. Receptionists work for large hotel chains and smaller, private facilities.",
+        "Image": "https://images.worldskillsusercontent.org/wsbd/ws36/31393/wsbd36950c-7064-4788-9440-04a52e6fa04e_medium"
+    },
+    {
+        "Name": "Additive Manufacturing",
+        "Number": "57",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "One of the newest and fastest-growing branches of engineering, Additive Manufacturing is more commonly known as 3D printing.",
+        "Image": "https://images.worldskillsusercontent.org/ws3a/ws19/31388/ws3a1978b7-9121-4959-b520-5531f1800091_medium"
+    },
+    {
+        "Name": "Digital Construction",
+        "Number": "58",
+        "Type": "Construction and Building Technology",
+        "Description": "Building Information Modelling (BIM) is a way to create and manage information about a project throughout its construction. It provides a complete digital model of the project for all those involved, allowing them to update and improve at key stages.",
+        "Image": "https://images.worldskillsusercontent.org/ws90/ws9b/31389/ws909b6ae2-c839-4b63-bade-5e5f71d718ea_medium"
+    },
+    {
+        "Name": "Industrial Design Technology",
+        "Number": "59",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "Consumer products for mass consumption need both to work well and look good. This is the role of Industrial Design Technology, which also makes sure that a new product is technically feasible to make, meets the need in the marketplace, and can be sold at an acceptable price.",
+        "Image": "https://images.worldskillsusercontent.org/ws82/wsd4/32881/ws82d4cda6-59f3-4e1b-a19b-32a9931c25db_medium"
+    },
+    {
+        "Name": "Optoelectronic Technology",
+        "Number": "60",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "Optoelectronics is an emerging technology that combines the physics of light with electricity so that one can control the other. We see it in products like LED lights, solar cells, and optical fibre cables, among many.",
+        "Image": "https://images.worldskillsusercontent.org/ws57/wsd5/31398/ws57d5da89-878e-4d61-8d08-e1393ee048d2_medium"
+    },
+    {
+        "Name": "Rail Vehicle Technology",
+        "Number": "61",
+        "Type": "Transportation and Logistics",
+        "Description": "Railways are as important today as when they first began nearly 200 years ago, transporting large numbers of people and goods quickly and in a way that is friendly to the environment.",
+        "Image": "https://images.worldskillsusercontent.org/ws5a/ws2a/31399/ws5a2ae30e-b39e-4801-90d1-1b0a11816e23_medium"
+    },
+    {
+        "Name": "Renewable Energy",
+        "Number": "62",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "Renewable Energy is central to solving our current climate crisis and ensuring the health and growth of future economies.",
+        "Image": "https://images.worldskillsusercontent.org/ws0d/wsf3/31400/ws0df3a1ad-afce-42be-8ad4-aac997f53ef1_medium"
+    },
+    {
+        "Name": "Robot Systems Integration",
+        "Number": "63",
+        "Type": "Manufacturing and Engineering Technology",
+        "Description": "The number of robots used in industry has increased rapidly, with an estimated 400,000 installed every year. Robot Systems Integration ensures that they fit properly in the production process.\u00a0",
+        "Image": "https://images.worldskillsusercontent.org/ws0c/wsc3/32893/ws0cc37b86-f979-48b8-be2d-897c1b86d1dd_medium"
+    }
+]

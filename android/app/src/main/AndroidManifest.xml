@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.ws2022.a01.pm">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
    <application
         android:label="pm"
         android:name="${applicationName}"

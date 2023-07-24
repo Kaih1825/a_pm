@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pm/Screens/HomeScreens.dart';
 
+import 'Screens/SkillsList.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -13,8 +15,9 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
+var selected = 0.obs;
+
 class _MyAppState extends State<MyApp> {
-  var selected = 0;
   var tabName = ["Home", "Skills", "Photos", "Videos"];
   var tabIcon = [
     Icons.home,
@@ -22,6 +25,13 @@ class _MyAppState extends State<MyApp> {
     Icons.photo_library,
     Icons.video_call_rounded
   ];
+  var pages = [
+    const HomeScreen(),
+    const SkillsList(),
+    const HomeScreen(),
+    const SkillsList()
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -51,51 +61,52 @@ class _MyAppState extends State<MyApp> {
                         child: ListView.builder(
                           itemCount: tabName.length,
                           itemBuilder: (BuildContext context, int index) {
-                            return Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 10),
-                              child: InkWell(
-                                onTap: () {
-                                  selected = index;
-                                  setState(() {});
-                                },
-                                child: Container(
-                                  width: 100,
-                                  height: 100,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    border:
-                                        Border.all(color: Colors.grey.shade300),
-                                    color: selected == index
-                                        ? Colors.grey.shade300
-                                        : Colors.white,
-                                    boxShadow: [
-                                      selected == index
-                                          ? BoxShadow(
-                                              color: Colors.grey.shade400,
-                                              offset: Offset(0, 5),
-                                              blurRadius: 4,
-                                            )
-                                          : BoxShadow()
-                                    ],
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Icon(
-                                        tabIcon[index],
-                                        size: 50,
+                            return Obx(() => Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 10),
+                                  child: InkWell(
+                                    onTap: () {
+                                      selected.value = index;
+                                      setState(() {});
+                                    },
+                                    child: Container(
+                                      width: 100,
+                                      height: 100,
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: Colors.grey.shade300),
+                                        color: selected == index
+                                            ? Colors.grey.shade300
+                                            : Colors.white,
+                                        boxShadow: [
+                                          selected == index
+                                              ? BoxShadow(
+                                                  color: Colors.grey.shade400,
+                                                  offset: Offset(0, 5),
+                                                  blurRadius: 4,
+                                                )
+                                              : BoxShadow()
+                                        ],
                                       ),
-                                      Text(
-                                        tabName[index],
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 20),
-                                      )
-                                    ],
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Icon(
+                                            tabIcon[index],
+                                            size: 50,
+                                          ),
+                                          Text(
+                                            tabName[index],
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20),
+                                          )
+                                        ],
+                                      ),
+                                    ),
                                   ),
-                                ),
-                              ),
-                            );
+                                ));
                           },
                         ),
                       )
@@ -106,7 +117,7 @@ class _MyAppState extends State<MyApp> {
               Expanded(
                   child: GetMaterialApp(
                 debugShowCheckedModeBanner: false,
-                home: HomeScreen(),
+                home: Obx(() => pages[selected.value]),
               ))
             ],
           ),
