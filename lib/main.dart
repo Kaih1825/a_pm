@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pm/Screens/HomeScreens.dart';
+import 'package:pm/Screens/Photos.dart';
 
 import 'Screens/SkillsList.dart';
 
@@ -28,7 +29,7 @@ class _MyAppState extends State<MyApp> {
   var pages = [
     const HomeScreen(),
     const SkillsList(),
-    const HomeScreen(),
+    const Photos(),
     const SkillsList()
   ];
 
