@@ -178,18 +178,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     flex: 1,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Container(
-                        color: Colors.black87,
-                        child: const Padding(
-                          padding: EdgeInsets.all(10.0),
-                          child: Align(
-                            alignment: Alignment.bottomRight,
-                            child: Text(
-                              "Videos",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 40,
-                                  fontWeight: FontWeight.bold),
+                      child: InkWell(
+                        onTap: () {
+                          selected.value = 3;
+                        },
+                        child: Container(
+                          color: Colors.black87,
+                          child: const Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: Align(
+                              alignment: Alignment.bottomRight,
+                              child: Text(
+                                "Videos",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 40,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
                         ),
