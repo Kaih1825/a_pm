@@ -60,7 +60,7 @@ internal fun updateAppWidget(
     val nowInMillis: Long = (now.toEpochSecond(ZoneOffset.UTC) * 1000
             + now.get(ChronoField.MILLI_OF_SECOND)) *1000
     var mi=((endTime.timeInMillis-nowInMillis)/1000)%(60*24)
-    views.setTextViewText(R.id.daysText, nowInMillis.toString())
+    views.setTextViewText(R.id.daysText, (System.currentTimeMillis()/1000).toString())
     views.setTextViewText(R.id.hoursTxt, (Random.nextInt()).toString())
     val alarmManager =context.getSystemService(ALARM_SERVICE) as AlarmManager
     val intent = Intent(context, WidgetService::class.java)
