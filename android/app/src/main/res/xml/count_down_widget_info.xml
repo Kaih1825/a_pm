@@ -3,12 +3,12 @@
     android:description="@string/app_widget_description"
     android:initialKeyguardLayout="@layout/count_down_widget"
     android:initialLayout="@layout/count_down_widget"
-    android:minWidth="40dp"
-    android:minHeight="110dp"
+    android:minWidth="180dp"
+    android:minHeight="180dp"
     android:previewImage="@drawable/example_appwidget_preview"
 
     android:previewLayout="@layout/count_down_widget"
-    android:targetCellWidth="1"
+    android:targetCellWidth="2"
     android:targetCellHeight="2"
     android:updatePeriodMillis="1800000"
     android:widgetCategory="home_screen" />

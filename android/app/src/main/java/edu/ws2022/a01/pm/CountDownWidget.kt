@@ -9,6 +9,7 @@ import android.content.Context.ALARM_SERVICE
 import android.content.Intent
 import android.os.Build
 import android.widget.RemoteViews
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import java.time.LocalDateTime
 import java.time.ZoneOffset
@@ -47,7 +48,6 @@ class CountDownWidget : AppWidgetProvider() {
     }
 }
 
-@RequiresApi(Build.VERSION_CODES.O)
 internal fun updateAppWidget(
     context: Context,
     appWidgetManager: AppWidgetManager,
@@ -55,13 +55,10 @@ internal fun updateAppWidget(
 ) {
     val views = RemoteViews(context.packageName, R.layout.count_down_widget)
     var endTime=Calendar.getInstance()
-    endTime.set(2024,9,15,23,59,59)
-    val now: LocalDateTime = LocalDateTime.now()
-    val nowInMillis: Long = (now.toEpochSecond(ZoneOffset.UTC) * 1000
-            + now.get(ChronoField.MILLI_OF_SECOND)) *1000
-    var mi=((endTime.timeInMillis-nowInMillis)/1000)%(60*24)
-    views.setTextViewText(R.id.daysText, (System.currentTimeMillis()/1000).toString())
-    views.setTextViewText(R.id.hoursTxt, (Random.nextInt()).toString())
+    endTime.set(2024,8,15,23,59,59)
+    var mi=((endTime.timeInMillis-Calendar.getInstance().timeInMillis)/1000)
+    views.setTextViewText(R.id.daysText, (mi/3600/24).toString())
+    views.setTextViewText(R.id.hoursTxt, ((mi/3600)-((mi/3600/24)*24)).toString())
     val alarmManager =context.getSystemService(ALARM_SERVICE) as AlarmManager
     val intent = Intent(context, WidgetService::class.java)
     val pendingIntent = PendingIntent.getService(context, 0, intent, 0)
