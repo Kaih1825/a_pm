@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/app_widget_description"
+    android:initialKeyguardLayout="@layout/count_down_widget"
+    android:initialLayout="@layout/count_down_widget"
+    android:minWidth="40dp"
+    android:minHeight="110dp"
+    android:previewImage="@drawable/example_appwidget_preview"
+
+    android:previewLayout="@layout/count_down_widget"
+    android:targetCellWidth="1"
+    android:targetCellHeight="2"
+    android:updatePeriodMillis="1800000"
+    android:widgetCategory="home_screen" />
