@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
             children: [
               Obx(() => showNavigationBar.value
                   ? Container(
-                      width: 100,
+                      width: 150,
                       height: double.infinity,
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
@@ -78,8 +78,8 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                                             setState(() {});
                                           },
                                           child: Container(
-                                            width: 80,
-                                            height: 80,
+                                            width: 100,
+                                            height: 100,
                                             alignment: Alignment.center,
                                             decoration: BoxDecoration(
                                               border: Border.all(color: Colors.grey.shade300),

@@ -24,13 +24,14 @@ class _VideosState extends State<Videos> {
   VideoPlayerController? mainVideoController;
   var nowIndex = 1;
   var videos = List.empty();
+  var comments = [];
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     parseJson();
-    mainVideoController = setController1(1);
+    mainVideoController = setController1(nowIndex);
     setState(() {});
   }
 
@@ -40,12 +41,22 @@ class _VideosState extends State<Videos> {
     for (var i = 0; i < videos.length; i++) {
       videos[i]["controller"] = setController(i);
     }
+    comments = await getComment(nowIndex);
     setState(() {});
   }
 
+  Future<List> getComment(item) async {
+    var headers = {'Content-Type': 'application/json'};
+    var request = http.Request('GET', Uri.parse('http://10.0.2.2:8487/comment/$item'));
+    request.body = '''{\n    "content":\n}''';
+    request.headers.addAll(headers);
+
+    http.StreamedResponse response = await request.send();
+    return jsonDecode(await response.stream.bytesToString());
+  }
+
   VideoPlayerController setController(index) {
-    var con = VideoPlayerController.networkUrl(
-        Uri.parse("http://10.0.2.2:8487/video/$index"))
+    var con = VideoPlayerController.networkUrl(Uri.parse("http://10.0.2.2:8487/video/$index"))
       ..initialize().then((value) {
         setState(() {});
       });
@@ -53,8 +64,7 @@ class _VideosState extends State<Videos> {
   }
 
   VideoPlayerController setController1(index) {
-    var con = VideoPlayerController.networkUrl(
-        Uri.parse("http://10.0.2.2:8487/video/$index"))
+    var con = VideoPlayerController.networkUrl(Uri.parse("http://10.0.2.2:8487/video/$index"))
       ..initialize().then((value) {
         setState(() {});
       })
@@ -73,7 +83,7 @@ class _VideosState extends State<Videos> {
         padding: const EdgeInsets.all(15.0),
         child: Row(
           children: [
-            Expanded(
+            Flexible(
               flex: 3,
               child: SizedBox(
                 width: double.infinity,
@@ -84,8 +94,7 @@ class _VideosState extends State<Videos> {
                       child: mainVideoController == null
                           ? Container()
                           : AspectRatio(
-                              aspectRatio:
-                                  mainVideoController!.value.aspectRatio,
+                              aspectRatio: mainVideoController!.value.aspectRatio,
                               child: Stack(
                                 children: [
                                   InkWell(
@@ -95,9 +104,8 @@ class _VideosState extends State<Videos> {
                                     onTapUp: (TapUpDetails) {
                                       mainVideoController!.setPlaybackSpeed(1);
                                     },
-                                    onTap: () {
-                                      if (mainVideoController!
-                                          .value.isPlaying) {
+                                    onDoubleTap: () {
+                                      if (mainVideoController!.value.isPlaying) {
                                         mainVideoController!.pause();
                                       } else {
                                         mainVideoController!.play();
@@ -116,55 +124,41 @@ class _VideosState extends State<Videos> {
                                       color: Colors.black.withAlpha(50),
                                       alignment: Alignment.centerLeft,
                                       child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 10),
+                                        padding: const EdgeInsets.symmetric(horizontal: 10),
                                         child: DefaultTextStyle(
                                           style: TextStyle(color: Colors.white),
                                           child: Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
+                                            crossAxisAlignment: CrossAxisAlignment.center,
                                             children: [
                                               InkWell(
                                                 onTap: () {
-                                                  if (mainVideoController!
-                                                      .value.isPlaying) {
-                                                    mainVideoController!
-                                                        .pause();
+                                                  if (mainVideoController!.value.isPlaying) {
+                                                    mainVideoController!.pause();
                                                   } else {
                                                     mainVideoController!.play();
                                                   }
                                                   setState(() {});
                                                 },
                                                 child: Icon(
-                                                  mainVideoController!
-                                                          .value.isPlaying
-                                                      ? Icons.pause
-                                                      : Icons.play_arrow,
+                                                  mainVideoController!.value.isPlaying ? Icons.pause : Icons.play_arrow,
                                                   color: Colors.white,
                                                 ),
                                               ),
                                               ValueListenableBuilder(
-                                                valueListenable:
-                                                    mainVideoController!,
-                                                builder: (BuildContext context,
-                                                    VideoPlayerValue value,
-                                                    Widget? child) {
-                                                  return Text(value.position
-                                                      .getString());
+                                                valueListenable: mainVideoController!,
+                                                builder: (BuildContext context, VideoPlayerValue value, Widget? child) {
+                                                  return Text(value.position.getString());
                                                 },
                                               ),
-                                              Text(
-                                                  " / ${mainVideoController!.value.duration.getString()}"),
+                                              Text(" / ${mainVideoController!.value.duration.getString()}"),
                                               Spacer(),
                                               InkWell(
                                                 onTap: () {
                                                   showDialog(
                                                       context: context,
-                                                      builder: (BuildContext
-                                                          context) {
+                                                      builder: (BuildContext context) {
                                                         return VideoFullScreenDialog(
-                                                          mainVideoController:
-                                                              mainVideoController!,
+                                                          mainVideoController: mainVideoController!,
                                                         );
                                                       });
                                                 },
@@ -175,23 +169,15 @@ class _VideosState extends State<Videos> {
                                               ),
                                               InkWell(
                                                 onTap: () {
-                                                  if (mainVideoController!
-                                                          .value.volume ==
-                                                      0.0) {
-                                                    mainVideoController!
-                                                        .setVolume(1.0);
+                                                  if (mainVideoController!.value.volume == 0.0) {
+                                                    mainVideoController!.setVolume(1.0);
                                                   } else {
-                                                    mainVideoController!
-                                                        .setVolume(0.0);
+                                                    mainVideoController!.setVolume(0.0);
                                                   }
                                                   setState(() {});
                                                 },
                                                 child: Icon(
-                                                  mainVideoController!
-                                                              .value.volume ==
-                                                          0.0
-                                                      ? Icons.volume_off
-                                                      : Icons.volume_up,
+                                                  mainVideoController!.value.volume == 0.0 ? Icons.volume_off : Icons.volume_up,
                                                   color: Colors.white,
                                                 ),
                                               )
@@ -206,15 +192,15 @@ class _VideosState extends State<Videos> {
                             ),
                     ),
                     Flexible(
-                      flex: 1,
+                      flex: 2,
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
                             width: double.infinity,
                             color: Colors.grey.shade400,
                             child: const Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 13),
+                              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 13),
                               child: Text("Video Title"),
                             ),
                           ),
@@ -231,22 +217,16 @@ class _VideosState extends State<Videos> {
                                       child: Container(
                                         decoration: BoxDecoration(
                                             color: Colors.white,
-                                            borderRadius:
-                                                BorderRadius.circular(5),
-                                            border: Border.all(
-                                                color: Colors.grey.shade300)),
+                                            borderRadius: BorderRadius.circular(5),
+                                            border: Border.all(color: Colors.grey.shade300)),
                                         height: 50,
                                         child: Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 10),
+                                          padding: const EdgeInsets.symmetric(horizontal: 10),
                                           child: TextField(
                                             controller: inputController,
                                             decoration: const InputDecoration(
-                                              hintStyle: TextStyle(
-                                                  fontStyle: FontStyle.italic,
-                                                  color: Colors.grey),
-                                              hintText:
-                                                  "Type a new comment here.",
+                                              hintStyle: TextStyle(fontStyle: FontStyle.italic, color: Colors.grey),
+                                              hintText: "Type a new comment here.",
                                               border: InputBorder.none,
                                             ),
                                           ),
@@ -258,25 +238,66 @@ class _VideosState extends State<Videos> {
                                     flex: 1,
                                     child: Container(
                                       height: 50,
-                                      decoration: BoxDecoration(
-                                          color: Colors.blueGrey,
-                                          borderRadius:
-                                              BorderRadius.circular(5)),
+                                      decoration: BoxDecoration(color: Colors.blueGrey, borderRadius: BorderRadius.circular(5)),
                                       child: InkWell(
-                                        onTap: () {},
+                                        onTap: () async {
+                                          var headers = {'Content-Type': 'application/json'};
+                                          var request = http.Request('POST', Uri.parse('http://10.0.2.2:8487/comment/$nowIndex'));
+                                          request.body = json.encode({"content": inputController.text});
+                                          request.headers.addAll(headers);
+
+                                          http.StreamedResponse response = await request.send();
+
+                                          if (response.statusCode == 200) {
+                                            print(await response.stream.bytesToString());
+                                            comments = await getComment(nowIndex);
+                                            setState(() {});
+                                          } else {
+                                            print(response.reasonPhrase);
+                                          }
+                                        },
                                         child: const Center(
                                             child: Text(
                                           "Publish",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold),
+                                          style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
                                         )),
                                       ),
                                     ),
                                   ),
                                 ],
                               ),
+                            ),
+                          ),
+                          Text("${comments.length} Comments"),
+                          Expanded(
+                            child: ListView.builder(
+                              itemCount: comments.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                return Padding(
+                                  padding: const EdgeInsets.only(top: 15),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "From ${comments[index]["author"]}:",
+                                        style: const TextStyle(color: Colors.grey, fontSize: 18, fontStyle: FontStyle.italic),
+                                      ),
+                                      Text(
+                                        "${comments[index]["content"]}",
+                                        style: const TextStyle(fontSize: 18),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(vertical: 5),
+                                        child: Container(
+                                          color: Colors.grey.shade300,
+                                          width: double.infinity,
+                                          height: 1,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                );
+                              },
                             ),
                           )
                         ],
@@ -295,8 +316,7 @@ class _VideosState extends State<Videos> {
                   children: [
                     const Text(
                       "More Videos...",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
                     Expanded(
                       child: ListView.builder(
@@ -305,57 +325,32 @@ class _VideosState extends State<Videos> {
                           return nowIndex == index
                               ? Container()
                               : Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 8),
+                                  padding: const EdgeInsets.symmetric(vertical: 8),
                                   child: videos[index]["controller"] != null
                                       ? InkWell(
-                                          onTap: () {
+                                          onTap: () async {
                                             nowIndex = index;
-                                            mainVideoController =
-                                                setController1(index);
+                                            mainVideoController = setController1(index);
+                                            comments = await getComment(nowIndex);
                                             setState(() {});
                                           },
                                           child: AspectRatio(
-                                              aspectRatio: (videos[index]
-                                                          ["controller"]
-                                                      as VideoPlayerController)
-                                                  .value
-                                                  .aspectRatio,
+                                              aspectRatio: (videos[index]["controller"] as VideoPlayerController).value.aspectRatio,
                                               child: Stack(
                                                 children: [
-                                                  VideoPlayer(videos[index]
-                                                      ["controller"]),
+                                                  VideoPlayer(videos[index]["controller"]),
                                                   Padding(
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            8.0),
+                                                    padding: const EdgeInsets.all(8.0),
                                                     child: Align(
-                                                      alignment:
-                                                          Alignment.bottomRight,
+                                                      alignment: Alignment.bottomRight,
                                                       child: Container(
-                                                        decoration: BoxDecoration(
-                                                            color: Colors
-                                                                .grey.shade800,
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        5)),
+                                                        decoration:
+                                                            BoxDecoration(color: Colors.grey.shade800, borderRadius: BorderRadius.circular(5)),
                                                         child: Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                      .symmetric(
-                                                                  horizontal:
-                                                                      10,
-                                                                  vertical: 5),
+                                                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                                                           child: Text(
                                                             "${(videos[index]["controller"] as VideoPlayerController).value.duration.toString().split(":")[1].length == 2 && (videos[index]["controller"] as VideoPlayerController).value.duration.toString().split(":")[1][0] == "0" ? (videos[index]["controller"] as VideoPlayerController).value.duration.toString().split(":")[1][1] : (videos[index]["controller"] as VideoPlayerController).value.duration.toString().split(":")[1]}:${(videos[index]["controller"] as VideoPlayerController).value.duration.toString().split(":")[2].split(".")[0]}",
-                                                            style: const TextStyle(
-                                                                fontSize: 20,
-                                                                color: Colors
-                                                                    .white,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold),
+                                                            style: const TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
                                                           ),
                                                         ),
                                                       ),

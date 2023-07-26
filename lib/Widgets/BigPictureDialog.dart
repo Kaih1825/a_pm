@@ -21,12 +21,15 @@ class _BigPictureDialogState extends State<BigPictureDialog> {
 
   @override
   Widget build(BuildContext context) {
-    return InteractiveViewer(
-      child: Image.network(
-        widget.url,
-        width: double.infinity,
-        height: double.infinity,
-        fit: BoxFit.cover,
+    return Container(
+      color: Colors.black,
+      child: InteractiveViewer(
+        child: Image.network(
+          widget.url,
+          width: double.infinity,
+          height: double.infinity,
+          fit: BoxFit.fitHeight,
+        ),
       ),
     );
   }

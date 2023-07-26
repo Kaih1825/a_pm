@@ -29,8 +29,19 @@ class _PhotosState extends State<Photos> {
   }
 
   void parseJson() async {
-    jsonArray = jsonDecode(
-        await DefaultAssetBundle.of(context).loadString("res/Images.json"));
+    var headers = {'Content-Type': 'application/json'};
+    var request = http.Request('GET', Uri.parse('http://10.0.2.2:8487/photos'));
+    request.body = '''{\n    "content":\n}''';
+    request.headers.addAll(headers);
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 200) {
+      jsonArray = jsonDecode(await response.stream.bytesToString());
+    } else {
+      print(response.reasonPhrase);
+    }
+
     setState(() {});
   }
 
@@ -51,9 +62,7 @@ class _PhotosState extends State<Photos> {
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisExtent: (MediaQuery.of(context).size.height -
                                 AppBar().preferredSize.height -
-                                (MediaQuery.of(context).size.height -
-                                        AppBar().preferredSize.height) /
-                                    7) /
+                                (MediaQuery.of(context).size.height - AppBar().preferredSize.height) / 7) /
                             2 -
                         20,
                     crossAxisCount: 3),
@@ -64,15 +73,9 @@ class _PhotosState extends State<Photos> {
                       CupertinoContextMenuAction(
                         child: const Text("Share this photo"),
                         onPressed: () async {
-                          var respone = await http.get(
-                              Uri.parse(jsonArray[(nowPage - 1) * 6 + index]));
-                          await File(
-                                  '${(await getExternalCacheDirectories())![0].path}/tmp.png')
-                              .writeAsBytes(respone.bodyBytes);
-                          await Share.shareXFiles([
-                            XFile(
-                                '${(await getExternalCacheDirectories())![0].path}/tmp.png')
-                          ], text: "SS");
+                          var respone = await http.get(Uri.parse(jsonArray[(nowPage - 1) * 6 + index]));
+                          await File('${(await getExternalCacheDirectories())![0].path}/tmp.png').writeAsBytes(respone.bodyBytes);
+                          await Share.shareXFiles([XFile('${(await getExternalCacheDirectories())![0].path}/tmp.png')], text: "SS");
                         },
                       )
                     ],
@@ -82,8 +85,7 @@ class _PhotosState extends State<Photos> {
                       onClosed: (child) {
                         showNavigationBar.value = true;
                       },
-                      closedBuilder:
-                          (BuildContext context, void Function() action) {
+                      closedBuilder: (BuildContext context, void Function() action) {
                         return Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Container(
@@ -92,8 +94,7 @@ class _PhotosState extends State<Photos> {
                               children: [
                                 Align(
                                   alignment: Alignment.center,
-                                  child: Image.network(
-                                      jsonArray[(nowPage - 1) * 6 + index]),
+                                  child: Image.network("http://10.0.2.2:8487/photo/${jsonArray[(nowPage - 1) * 6 + index]["name"]}"),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
@@ -104,20 +105,17 @@ class _PhotosState extends State<Photos> {
                                       height: 50,
                                       width: 130,
                                       child: DefaultTextStyle(
-                                        style: const TextStyle(
-                                            color: Colors.white, fontSize: 16),
+                                        style: const TextStyle(color: Colors.white, fontSize: 16),
                                         child: Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 5),
+                                          padding: const EdgeInsets.symmetric(horizontal: 5),
                                           child: Align(
                                             alignment: Alignment.centerRight,
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.end,
-                                              children: const [
-                                                Text("Popularity: 230"),
-                                                Text("Visit: 3500")
+                                              crossAxisAlignment: CrossAxisAlignment.end,
+                                              children: [
+                                                Text("Popularity: ${jsonArray[(nowPage - 1) * 6 + index]["popularity"]}"),
+                                                Text("Visit: ${jsonArray[(nowPage - 1) * 6 + index]["visits"]}")
                                               ],
                                             ),
                                           ),
@@ -131,10 +129,8 @@ class _PhotosState extends State<Photos> {
                           ),
                         );
                       },
-                      openBuilder: (BuildContext context,
-                          void Function({Object? returnValue}) action) {
-                        return BigPictureDialog(
-                            url: jsonArray[(nowPage - 1) * 6 + index]);
+                      openBuilder: (BuildContext context, void Function({Object? returnValue}) action) {
+                        return BigPictureDialog(url: "http://10.0.2.2:8487/photo/${jsonArray[(nowPage - 1) * 6 + index]["name"]}");
                       },
                     ),
                   );
@@ -177,9 +173,7 @@ class _PhotosState extends State<Photos> {
                       ),
                     ),
                     Container(
-                      color: nowPage == 1
-                          ? Colors.grey.shade400
-                          : Colors.transparent,
+                      color: nowPage == 1 ? Colors.grey.shade400 : Colors.transparent,
                       child: GestureDetector(
                         onTap: () {
                           if (nowPage == 10) {
@@ -200,9 +194,7 @@ class _PhotosState extends State<Photos> {
                       ),
                     ),
                     Container(
-                      color: nowPage != 1 && nowPage != 10
-                          ? Colors.grey.shade400
-                          : Colors.transparent,
+                      color: nowPage != 1 && nowPage != 10 ? Colors.grey.shade400 : Colors.transparent,
                       child: GestureDetector(
                         onTap: () {
                           if (nowPage == 10) {
@@ -224,12 +216,12 @@ class _PhotosState extends State<Photos> {
                       ),
                     ),
                     Container(
-                      color: nowPage == 10
-                          ? Colors.grey.shade400
-                          : Colors.transparent,
+                      color: nowPage == 10 ? Colors.grey.shade400 : Colors.transparent,
                       child: GestureDetector(
                         onTap: () {
-                          if (nowPage != 10) {
+                          if (nowPage == 1) {
+                            nowPage = 3;
+                          } else if (nowPage != 10) {
                             nowPage++;
                           }
                           setState(() {});

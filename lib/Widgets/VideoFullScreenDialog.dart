@@ -4,8 +4,7 @@ import 'package:video_player/video_player.dart';
 
 class VideoFullScreenDialog extends StatefulWidget {
   final mainVideoController;
-  const VideoFullScreenDialog({Key? key, this.mainVideoController})
-      : super(key: key);
+  const VideoFullScreenDialog({Key? key, this.mainVideoController}) : super(key: key);
 
   @override
   State<VideoFullScreenDialog> createState() => _VideoFullScreenDialogState();
@@ -18,6 +17,11 @@ class _VideoFullScreenDialogState extends State<VideoFullScreenDialog> {
     // TODO: implement initState
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+  }
+
+  String getString(d) {
+    var gs = d.toString().split(".")[0].split(":");
+    return "${gs[1]}:${gs[2]}";
   }
 
   @override
@@ -34,7 +38,7 @@ class _VideoFullScreenDialogState extends State<VideoFullScreenDialog> {
               onTapUp: (TapUpDetails) {
                 mainVideoController!.setPlaybackSpeed(1.0);
               },
-              onTap: () {
+              onDoubleTap: () {
                 if (mainVideoController!.value.isPlaying) {
                   mainVideoController!.pause();
                 } else {
@@ -45,9 +49,7 @@ class _VideoFullScreenDialogState extends State<VideoFullScreenDialog> {
               child: SizedBox(
                 width: double.infinity,
                 child: Center(
-                  child: AspectRatio(
-                      aspectRatio: mainVideoController!.value.aspectRatio,
-                      child: VideoPlayer(mainVideoController!)),
+                  child: AspectRatio(aspectRatio: mainVideoController!.value.aspectRatio, child: VideoPlayer(mainVideoController!)),
                 ),
               ),
             ),
@@ -74,35 +76,25 @@ class _VideoFullScreenDialogState extends State<VideoFullScreenDialog> {
                             setState(() {});
                           },
                           child: Icon(
-                            mainVideoController!.value.isPlaying
-                                ? Icons.pause
-                                : Icons.play_arrow,
+                            mainVideoController!.value.isPlaying ? Icons.pause : Icons.play_arrow,
                             color: Colors.white,
                           ),
                         ),
                         ValueListenableBuilder(
                           valueListenable: mainVideoController!,
-                          builder: (BuildContext context,
-                              VideoPlayerValue value, Widget? child) {
-                            var gs = value.position
-                                .toString()
-                                .split(".")[0]
-                                .split(":");
+                          builder: (BuildContext context, VideoPlayerValue value, Widget? child) {
+                            var gs = value.position.toString().split(".")[0].split(":");
                             return Text("${gs[1]}:${gs[2]}");
                           },
                         ),
-                        Text(
-                            " / ${mainVideoController.value.position.toString().split(".")[0].split(":")[1]}:${mainVideoController.value.position.toString().split(".")[0].split(":")[1]}"),
+                        Text(" / ${getString(mainVideoController!.value.duration)}"),
                         Spacer(),
                         InkWell(
                           onTap: () {
                             Navigator.pop(context);
-                            SystemChrome.setEnabledSystemUIMode(
-                                SystemUiMode.manual,
-                                overlays: SystemUiOverlay.values);
+                            SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
                           },
-                          child: const Icon(Icons.fullscreen_exit,
-                              color: Colors.white),
+                          child: const Icon(Icons.fullscreen_exit, color: Colors.white),
                         ),
                         InkWell(
                           onTap: () {
@@ -114,9 +106,7 @@ class _VideoFullScreenDialogState extends State<VideoFullScreenDialog> {
                             setState(() {});
                           },
                           child: Icon(
-                            mainVideoController!.value.volume == 0.0
-                                ? Icons.volume_off
-                                : Icons.volume_up,
+                            mainVideoController!.value.volume == 0.0 ? Icons.volume_off : Icons.volume_up,
                             color: Colors.white,
                           ),
                         )
